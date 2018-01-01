@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.manhn.firebase.Main2Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="185dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Thêm từ"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="61dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Thêm câu"
+            tools:layout_editor_absoluteX="101dp"
+            tools:layout_editor_absoluteY="168dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="183dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Thêm hội thoại"
+            tools:layout_editor_absoluteX="101dp"
+            tools:layout_editor_absoluteY="258dp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
