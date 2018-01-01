@@ -15,13 +15,13 @@ public class Idiom {
     private String example;
     private int status;
 
-    public Idiom(String _id, String _word, String _type, String detail, String example, int _status) {
+    public Idiom(String _id, String _word, String _type, String detail) {
         this._id = _id;
         this.word = _word;
         this.type = _type;
         this.detail = detail;
-        this.example = example;
-        this.status = _status;
+        this.example = "";
+        this.status = 0;
     }
 
     public Idiom(String _word, String _type, int _status) {
