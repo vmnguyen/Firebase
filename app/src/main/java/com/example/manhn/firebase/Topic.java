@@ -11,7 +11,9 @@ public class Topic {
     private String topic_id;
     private String topic_name;
     private HashMap<String, Conversation> conversations;
+    public Topic(){
 
+    }
     public Topic(String topic_id, String topic_name, HashMap<String, Conversation> conversations){
         this.topic_id = topic_id;
         this.topic_name  = topic_name;

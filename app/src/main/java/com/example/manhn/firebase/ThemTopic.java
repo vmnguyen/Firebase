@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,42 +42,56 @@ public class ThemTopic extends AppCompatActivity {
         addPhrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                doAddPhrase();
+                doAddPhrase(view);
             }
         });
         addConversation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                doAddConversation();
+                doAddConversation(view);
             }
         });
         addTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                doAddTopic();
+                doAddTopic(view);
             }
         });
     }
 
-    private void doAddTopic() {
+    private void doAddTopic(View view) {
         String topicName  = editTextTopicName.getText().toString();
         String idTopic = myRef.push().getKey();
         Topic tmp = new Topic(idTopic, topicName, this.conversationHashMap);
         myRef.child("Sample1").child("topics").child(idTopic).setValue(tmp);
+        this.conversationHashMap.clear();
+        Toast.makeText(view.getContext(), "Thêm topic thành công", Toast.LENGTH_LONG).show();
+        editTextAudio.setText("");
+        editTextPhrase.setText("");
+        editTextConversationName.setText("");
+        editTextTopicName.setText("");
     }
 
-    private void doAddConversation() {
+    private void doAddConversation(View view) {
         String textConversation = editTextConversationName.getText().toString();
         String idConversation = myRef.push().getKey();
         Conversation tmp = new Conversation(idConversation, textConversation, this.phraseHashMap);
         conversationHashMap.put(idConversation, tmp);
+        this.phraseHashMap.clear();
+        Toast.makeText(view.getContext(), "Thêm hội thoại thành công", Toast.LENGTH_LONG).show();
+        editTextAudio.setText("");
+        editTextPhrase.setText("");
+        editTextConversationName.setText("");
     }
 
-    private void doAddPhrase() {
+    private void doAddPhrase(View view) {
         String textPhrase = editTextPhrase.getText().toString();
         String idPhrase = myRef.push().getKey();
         String audioPath = editTextAudio.getText().toString();
         Phrase tmp = new Phrase(idPhrase, textPhrase, audioPath);
         phraseHashMap.add(tmp);
+        Toast.makeText(view.getContext(), "Thêm câu thành công", Toast.LENGTH_LONG).show();
+        editTextAudio.setText("");
+        editTextPhrase.setText("");
     }
 }

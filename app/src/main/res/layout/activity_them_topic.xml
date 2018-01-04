@@ -18,32 +18,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="topicName" />
+            android:hint="topic Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editText5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="conversationName" />
+            android:hint="conversationName"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Phrase" />
+            android:hint="Phrase"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editText7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="audio" />
+            android:hint="audio"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/button8"
