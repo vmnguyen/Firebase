@@ -12,7 +12,7 @@ public class Idiom {
     private String word;
     private String type;
     private String detail;
-    private String example;
+    private String audio;
     private int status;
 
     public Idiom(String _id, String _word, String _type, String detail) {
@@ -20,7 +20,7 @@ public class Idiom {
         this.word = _word;
         this.type = _type;
         this.detail = detail;
-        this.example = "";
+        this.audio = "";
         this.status = 0;
     }
 
@@ -74,12 +74,12 @@ public class Idiom {
         this.detail = detail;
     }
 
-    public String getExample() {
-        return example;
+    public String getAudio() {
+        return audio;
     }
 
-    public void setExample(String example) {
-        this.example = example;
+    public void setAudio(String example) {
+        this.audio = example;
     }
 
 }

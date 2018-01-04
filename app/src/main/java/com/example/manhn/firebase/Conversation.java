@@ -22,8 +22,12 @@ public class Conversation {
         this.conversation_status = conversation_status;
     }
 
-    public Conversation() {
-
+    public Conversation(String conversation_id, String conversation_name, List<Phrase> phrases) {
+        this.conversation_id = conversation_id;
+        this.conversation_name = conversation_name;
+        this.conversation_level  = 1;
+        this.conversation_status = 0;
+        this.phrases = phrases;
     }
 
     public String getConversation_id() {

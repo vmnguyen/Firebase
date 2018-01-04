@@ -1,5 +1,6 @@
 package com.example.manhn.firebase;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,19 +10,13 @@ import java.util.List;
 public class Topic {
     private String topic_id;
     private String topic_name;
-    private List<Conversation> conversations;
+    private HashMap<String, Conversation> conversations;
 
-
-    public Topic(String topic_id, String topic_name, List<Conversation> conversations) {
+    public Topic(String topic_id, String topic_name, HashMap<String, Conversation> conversations){
         this.topic_id = topic_id;
-        this.topic_name = topic_name;
+        this.topic_name  = topic_name;
         this.conversations = conversations;
     }
-
-    public Topic() {
-
-    }
-
     public String getTopic_id() {
         return topic_id;
     }
@@ -38,11 +33,11 @@ public class Topic {
         this.topic_name = topic_name;
     }
 
-    public List<Conversation> getConversations() {
+    public HashMap<String, Conversation> getConversations() {
         return conversations;
     }
 
-    public void setConversations(List<Conversation> conversations) {
+    public void setConversations(HashMap<String, Conversation> conversations) {
         this.conversations = conversations;
     }
 }
