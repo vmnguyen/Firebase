@@ -1,6 +1,8 @@
 package com.example.manhn.firebase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -8,7 +10,7 @@ import java.util.HashMap;
  */
 
 public class User {
-    private HashMap<String, Topic> topics = new HashMap<>();
+    private List< Topic> topics = new ArrayList<>();
     private HashMap<String, Word> words = new HashMap<>();
     private HashMap<String, Idiom> idioms = new HashMap<>();
     private Progress progress = new Progress();
@@ -33,12 +35,6 @@ public class User {
     public void setExpirationDay(String expirationDay) {
         this.expirationDay = expirationDay;
     }
-
-
-
-
-
-
 
     public String getUserEmail() {
         return userEmail;
@@ -72,13 +68,7 @@ public class User {
         this.words = words;
     }
 
-    public HashMap<String, Topic> getTopics() {
-        return topics;
-    }
 
-    public void setTopics(HashMap<String, Topic> topics) {
-        this.topics = topics;
-    }
 
     public HashMap<String, Idiom> getIdioms() {
         return idioms;
@@ -86,5 +76,13 @@ public class User {
 
     public void setIdioms(HashMap<String, Idiom> idioms) {
         this.idioms = idioms;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(List<Topic> topics) {
+        this.topics = topics;
     }
 }
