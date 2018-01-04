@@ -60,12 +60,14 @@ public class Main2Activity extends AppCompatActivity {
     }
     public void test(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Users").child("Sample");
+        final DatabaseReference myRef = database.getReference("Users").child("Sample3");
+        //final DatabaseReference myRef2 = database.getReference("Users");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 assert user != null;
+                //myRef2.child("Sample3").setValue(user);
                 HashMap<String, Word> tmp  = user.getWords();
                 HashMap<String, Idiom> tmp2  = user.getIdioms();
                 for (String key: tmp.keySet()){

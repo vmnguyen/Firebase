@@ -64,7 +64,7 @@ public class ThemTopic extends AppCompatActivity {
         String idTopic = myRef.push().getKey();
         Topic tmp = new Topic(idTopic, topicName, this.conversationHashMap);
         myRef.child("Sample1").child("topics").child(idTopic).setValue(tmp);
-        this.conversationHashMap.clear();
+        //this.conversationHashMap.clear();
         Toast.makeText(view.getContext(), "Thêm topic thành công", Toast.LENGTH_LONG).show();
         editTextAudio.setText("");
         editTextPhrase.setText("");

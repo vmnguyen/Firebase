@@ -29,6 +29,7 @@ public class Conversation {
         this.conversation_status = 0;
         this.phrases = phrases;
     }
+    public Conversation(){};
 
     public String getConversation_id() {
         return conversation_id;
@@ -82,6 +83,9 @@ public class Conversation {
 
     public String getPhraseId() {
         String result = "";
+        if (this.getPhrases() == null){
+            return result;
+        }
         for (Phrase i : this.getPhrases()) {
             result = result + i.getPhrase_id() + ":";
         }
@@ -90,6 +94,9 @@ public class Conversation {
 
     public String getPhraseContent() {
         String result = "";
+        if (this.getPhrases() == null){
+            return result;
+        }
         for (Phrase i : this.getPhrases()) {
             result = result + i.getPhrase_content() + ":";
         }
