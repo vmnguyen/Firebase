@@ -1,16 +1,16 @@
 package com.example.manhn.firebase;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+
 
 /**
  * Created by manhn on 12/9/2017.
  */
 
 public class User {
-    private List<Topic> topics = new ArrayList<>();
-    private List<Word> words = new ArrayList<>();
-    private List<Idiom> idioms = new ArrayList<>();
+    private HashMap<String, Topic> topics = new HashMap<>();
+    private HashMap<String, Word> words = new HashMap<>();
+    private HashMap<String, Idiom> idioms = new HashMap<>();
     private Progress progress = new Progress();
 
     private String userId;
@@ -34,29 +34,11 @@ public class User {
         this.expirationDay = expirationDay;
     }
 
-    public List<Topic> getTopics() {
-        return topics;
-    }
 
-    public void setTopics(List<Topic> _topics) {
-        this.topics = _topics;
-    }
 
-    public List<Word> getWords() {
-        return words;
-    }
 
-    public void setWords(List<Word> _words) {
-        this.words = _words;
-    }
 
-    public List<Idiom> getIdioms() {
-        return idioms;
-    }
 
-    public void setIdioms(List<Idiom> idioms) {
-        this.idioms = idioms;
-    }
 
     public String getUserEmail() {
         return userEmail;
@@ -80,5 +62,29 @@ public class User {
 
     public void setProgress(Progress progress) {
         this.progress = progress;
+    }
+
+    public HashMap<String, Word> getWords() {
+        return words;
+    }
+
+    public void setWords(HashMap<String, Word> words) {
+        this.words = words;
+    }
+
+    public HashMap<String, Topic> getTopics() {
+        return topics;
+    }
+
+    public void setTopics(HashMap<String, Topic> topics) {
+        this.topics = topics;
+    }
+
+    public HashMap<String, Idiom> getIdioms() {
+        return idioms;
+    }
+
+    public void setIdioms(HashMap<String, Idiom> idioms) {
+        this.idioms = idioms;
     }
 }

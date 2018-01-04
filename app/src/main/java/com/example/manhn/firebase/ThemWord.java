@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +39,7 @@ public class ThemWord extends AppCompatActivity {
 
         list = new ArrayList<String>();
         list.add("Ending sounds");
+        list.add("The r sounds");
         list.add("The p t k sounds");
         list.add("The s and sh sounds");
         list.add("The L and R sounds");
@@ -47,8 +49,11 @@ public class ThemWord extends AppCompatActivity {
         buttonAddArtist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 addWord();
                 queryDB();
+                editTextName.setText("");
+
             }
         });
     }
@@ -86,6 +91,7 @@ public class ThemWord extends AppCompatActivity {
         Word word = new Word(id,name, type, 0);
 
         myRef.child("Sample").child("words").child(id).setValue(word);
+        myRef.child("Sample1").child("User1").child("words").child(id).setValue(word);
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

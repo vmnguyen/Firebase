@@ -48,6 +48,8 @@ public class ThemIdioms extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addIdiom();
+                editTextidioms.setText("");
+                editTextType.setText("");
             }
         });
     }
