@@ -62,8 +62,11 @@ public class ThemTopic extends AppCompatActivity {
     private void doAddTopic(View view) {
         String topicName  = editTextTopicName.getText().toString();
         String idTopic = myRef.push().getKey();
-        Topic tmp = new Topic(idTopic, topicName, this.conversationHashMap);
+        HashMap<String, Conversation> tmpConversation = new HashMap<>();
+        tmpConversation.putAll(this.conversationHashMap);
+        Topic tmp = new Topic(idTopic, topicName, tmpConversation);
         myRef.child("Sample3").child("topics").child(idTopic).setValue(tmp);
+        this.conversationHashMap.clear();
         //this.conversationHashMap.clear();
         Toast.makeText(view.getContext(), "Thêm topic thành công", Toast.LENGTH_LONG).show();
         editTextAudio.setText("");
