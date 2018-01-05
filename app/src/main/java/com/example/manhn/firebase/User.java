@@ -10,7 +10,7 @@ import java.util.List;
  */
 
 public class User {
-    private List< Topic> topics = new ArrayList<>();
+    private HashMap<String, Topic> topics = new HashMap<>();
     private HashMap<String, Word> words = new HashMap<>();
     private HashMap<String, Idiom> idioms = new HashMap<>();
     private Progress progress = new Progress();
@@ -78,11 +78,11 @@ public class User {
         this.idioms = idioms;
     }
 
-    public List<Topic> getTopics() {
+    public HashMap<String, Topic> getTopics() {
         return topics;
     }
 
-    public void setTopics(List<Topic> topics) {
+    public void setTopics(HashMap<String, Topic> topics) {
         this.topics = topics;
     }
 }

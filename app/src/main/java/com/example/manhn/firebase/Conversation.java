@@ -81,13 +81,13 @@ public class Conversation {
 
 
 
-    public String getPhraseId() {
+    public String getPhraseAudio() {
         String result = "";
         if (this.getPhrases() == null){
             return result;
         }
         for (Phrase i : this.getPhrases()) {
-            result = result + i.getPhrase_id() + ":";
+            result = result + i.getPhrase_audio_path() + ":";
         }
         return result;
     }

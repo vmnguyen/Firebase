@@ -63,7 +63,7 @@ public class ThemTopic extends AppCompatActivity {
         String topicName  = editTextTopicName.getText().toString();
         String idTopic = myRef.push().getKey();
         Topic tmp = new Topic(idTopic, topicName, this.conversationHashMap);
-        myRef.child("Sample1").child("topics").child(idTopic).setValue(tmp);
+        myRef.child("Sample3").child("topics").child(idTopic).setValue(tmp);
         //this.conversationHashMap.clear();
         Toast.makeText(view.getContext(), "Thêm topic thành công", Toast.LENGTH_LONG).show();
         editTextAudio.setText("");
@@ -75,9 +75,13 @@ public class ThemTopic extends AppCompatActivity {
     private void doAddConversation(View view) {
         String textConversation = editTextConversationName.getText().toString();
         String idConversation = myRef.push().getKey();
-        Conversation tmp = new Conversation(idConversation, textConversation, this.phraseHashMap);
-        conversationHashMap.put(idConversation, tmp);
+        List<Phrase> tmpPhrase = new ArrayList<>();
+        tmpPhrase.addAll(this.phraseHashMap);
+        Conversation tmp = new Conversation(idConversation, textConversation, tmpPhrase);
+
+        this.conversationHashMap.put(idConversation, tmp);
         this.phraseHashMap.clear();
+
         Toast.makeText(view.getContext(), "Thêm hội thoại thành công", Toast.LENGTH_LONG).show();
         editTextAudio.setText("");
         editTextPhrase.setText("");
@@ -89,7 +93,7 @@ public class ThemTopic extends AppCompatActivity {
         String idPhrase = myRef.push().getKey();
         String audioPath = editTextAudio.getText().toString();
         Phrase tmp = new Phrase(idPhrase, textPhrase, audioPath);
-        phraseHashMap.add(tmp);
+        this.phraseHashMap.add(tmp);
         Toast.makeText(view.getContext(), "Thêm câu thành công", Toast.LENGTH_LONG).show();
         editTextAudio.setText("");
         editTextPhrase.setText("");
